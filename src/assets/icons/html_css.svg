@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" fill="none">
+  <script xmlns="" />
+  <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26" />
+  <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529" />
+  <path
+    d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z"
+    fill="white" />
+  <script xmlns="" />
+  <script xmlns="" />
+  <path d="M38 28L36 3H60L58 28L48 31L38 28Z" fill="#1172B8" />
+  <path d="M58 5H48V29.5L56 27L58 5Z" fill="#33AADD" />
+  <path
+    d="M51.5 17.5H41.5L41 14L49 11.5H41L40.5 8.5H56L55.5 12L49 14.5H55L54 24L48 26L42 24L41.5 19H44.5L45 21.5L48 22.5L51 21.5L51.5 17.5Z"
+    fill="white" />
+  <script xmlns="" />
+</svg>

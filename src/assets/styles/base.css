@@ -1,0 +1,42 @@
+:root {
+  --container-max-width: 900px;
+
+  --bg-primary: #31333B;
+  --bg-secondary: #3D3E42;
+  --bg-tertiary: #5C5E60;
+  --bg-active: #F0BF6C;
+
+  --text-primary: #F8F8F9;
+  --text-active: #F0BF6C;
+
+  --fs-title: 2rem;
+  --fw-title: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+html {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  line-height: 1.2rem;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  padding: 0 1rem;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
