@@ -1,0 +1,9 @@
+@import url(./assets/styles/reset.css);
+@import url(./assets/styles/base.css);
+
+@import url(./assets/styles/navbar.css);
+@import url(./assets/styles/hero.css);
+@import url(./assets/styles/about.css);
+@import url(./assets/styles/experience.css);
+@import url(./assets/styles/skills.css);
+@import url(./assets/styles/contact.css);

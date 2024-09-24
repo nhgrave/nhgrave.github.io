@@ -1,0 +1,36 @@
+.contact-section {
+  background: var(--bg-secondary);
+  padding: 80px 0;
+}
+
+.contact-section .title {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-title);
+  text-align: center;
+  margin: 0 0 80px 0;
+}
+
+.contact-section .contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-section .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--bg-primary);
+  border-radius: 0.25rem;
+  width: 250px;
+  color: var(--text-active);
+}
+
+.contact-section .svg-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-primary);
+}

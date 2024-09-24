@@ -1,0 +1,43 @@
+.hero-section {
+  background: #34353A;
+  height: min(max(100svh, 400px), 800px);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  box-shadow: 0 8px 30px #303030;
+}
+
+.hero-section .title {
+  display: inline;
+  color: var(--text-active);
+  font-size: var(--fs-title);
+}
+
+.hero-section .profile-image {
+  width: 250px;
+  aspect-ratio: 1;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    align-items: unset;
+  }
+
+  .hero-section .profile-image {
+    width: 350px;
+    position: absolute;
+    right: 50%;
+    transform: translate(100%, 0);
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-section .profile-image {
+    width: 460px;
+  }
+}

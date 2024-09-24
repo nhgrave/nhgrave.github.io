@@ -1,0 +1,68 @@
+.experience-section {
+  background: var(--bg-secondary);
+  padding: 80px 0;
+}
+
+.experience-section .title {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-title);
+  margin: 0 0 40px 0;
+}
+
+.experience-section .experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: calc(var(--container-max-width) - 200px);
+  padding: 0 0 0 80px;
+  margin: auto;
+}
+
+.experience-section .experience-item {
+  padding-left: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+}
+
+.experience-section .experience-item:before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: var(--bg-active);
+  border-radius: 50%;
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  transform: translate(-50%, -0.6rem)
+}
+
+.experience-section .experience-item:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: calc(100% - 2rem);
+  background: var(--text-primary);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.experience-section .year-badge {
+  padding: 2px 12px 2px 4px;
+  background: var(--bg-tertiary);
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  transform: translate(-100%, -2px);
+  display: flex;
+  clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+}
+
+.experience-section .experience-position {
+  font-size: 1.5rem;
+  font-weight: 600;
+}

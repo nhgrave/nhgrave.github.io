@@ -1,0 +1,35 @@
+.navbar {
+  padding: 0.5rem 1rem;
+  background: #34353A;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-content {
+  display: flex;
+}
+
+.navbar-brand {
+  color: var(--text-active);
+  width: 30px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+.navbar-link {
+  color: #FFF;
+  opacity: 0.8;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  opacity: 1;
+}
