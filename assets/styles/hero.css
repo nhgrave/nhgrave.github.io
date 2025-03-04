@@ -29,15 +29,15 @@
   }
 
   .hero-section .profile-image {
-    width: 350px;
+    width: 280px;
     position: absolute;
     right: 50%;
-    transform: translate(100%, 0);
+    transform: translate(120%, 0);
   }
 }
 
 @media (min-width: 992px) {
   .hero-section .profile-image {
-    width: 460px;
+    width: 300px;
   }
 }

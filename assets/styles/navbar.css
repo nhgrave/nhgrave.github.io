@@ -1,6 +1,5 @@
 .navbar {
   padding: 0.5rem 1rem;
-  background: #34353A;
   position: fixed;
   top: 0;
   width: 100%;
@@ -9,6 +8,10 @@
 
 .nav-content {
   display: flex;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--bg-secondary), transparent 25%), color-mix(in srgb, var(--bg-primary), transparent 25%));
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  padding: 8px 16px;
 }
 
 .navbar-brand {

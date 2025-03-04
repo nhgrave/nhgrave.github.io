@@ -13,11 +13,6 @@
   --fw-title: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
-}
-
 html {
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -28,12 +23,12 @@ html {
 }
 
 body {
-  line-height: 1.2rem;
+  line-height: 1.2;
 }
 
 .container {
   max-width: var(--container-max-width);
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   margin: auto;
 }
 
