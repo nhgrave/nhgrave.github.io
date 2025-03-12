@@ -1,25 +1,27 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Nicolas Grave profile, Software Developer">
-    <meta name="keywords" content="HTML, CSS, JavaScript, TypeScript, Ruby, Ruby on Rails, VueJS, React, PostgreSQL, MySQL, Git, Software Development, Web Development">
-    <meta name="author" content="Nicolas Grave">
-    <link rel="icon" href="./assets/icons/codeblock.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nicolas Grave - Web Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-  </head>
+<script setup>
+import { onMounted } from 'vue';
 
-  <body>
+function scrollTo(e) {
+  e.preventDefault();
+
+  const reference = document.querySelector(e.target.getAttribute('data-scroll-to'));
+  if (reference) reference.scrollIntoView({ behavior: 'smooth' });
+}
+
+onMounted(() => {
+  document.querySelectorAll('[data-scroll-to]').forEach(($el) => {
+    $el.addEventListener('click', scrollTo);
+  });
+});
+</script>
+
+<template>
+  <div>
     <!-- Nav -->
     <div class="navbar">
       <div class="container">
         <div class="nav-content">
-          <embed src="./assets/icons/codeblock.svg" type="image/svg+xml" class="navbar-brand">
+          <embed src="/assets/icons/codeblock.svg" type="image/svg+xml" class="navbar-brand">
 
           <div class="navbar-menu">
             <a href="#about" data-scroll-to="#about" class="navbar-link">
@@ -47,7 +49,7 @@
         </div>
       </div>
 
-      <img src="./assets/images/profile.jpg" alt="Profile image" title="Profile image" class="profile-image">
+      <img src="/assets/images/profile.jpg" alt="Profile image" title="Profile image" class="profile-image">
     </div>
 
     <!-- About -->
@@ -93,39 +95,39 @@
 
         <div class="skills-list">
           <div class="skill-item">
-            <img src="./assets/icons/ruby.svg" alt="Ruby on Rails" title="Ruby on Rails logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/ruby.svg" alt="Ruby on Rails" title="Ruby on Rails logo" class="skill-item-logo" loading="lazy">
             Ruby on Rails
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/vuejs.svg" alt="VueJS" title="VueJS logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/vuejs.svg" alt="VueJS" title="VueJS logo" class="skill-item-logo" loading="lazy">
             VueJS
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/react.svg" alt="React" title="React logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/react.svg" alt="React" title="React logo" class="skill-item-logo" loading="lazy">
             React
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/javascript.svg" alt="JavaScript" title="JavaScript logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/javascript.svg" alt="JavaScript" title="JavaScript logo" class="skill-item-logo" loading="lazy">
             JavaScript
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/typescript.svg" alt="TypeScript" title="TypeScript logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/typescript.svg" alt="TypeScript" title="TypeScript logo" class="skill-item-logo" loading="lazy">
             TypeScript
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/html_css.svg" alt="HTML & CSS" title="HTML & CSS logo" class="skill-item-logo large" loading="lazy">
+            <img src="/assets/icons/html_css.svg" alt="HTML & CSS" title="HTML & CSS logo" class="skill-item-logo large" loading="lazy">
             HTML & CSS
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/git.svg" alt="Git" title="Git logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/git.svg" alt="Git" title="Git logo" class="skill-item-logo" loading="lazy">
             Git
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/postgresql.svg" alt="PostgreSQL" title="PostgreSQL logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/postgresql.svg" alt="PostgreSQL" title="PostgreSQL logo" class="skill-item-logo" loading="lazy">
             PostgreSQL
           </div>
           <div class="skill-item">
-            <img src="./assets/icons/mysql.svg" alt="MySQL" title="MySQL logo" class="skill-item-logo" loading="lazy">
+            <img src="/assets/icons/mysql.svg" alt="MySQL" title="MySQL logo" class="skill-item-logo" loading="lazy">
             MySQL
           </div>
         </div>
@@ -139,23 +141,25 @@
 
         <div class="contact-content">
           <a href="mailto:nyko-23@hotmail.com" class="contact-item">
-            <embed src="./assets/icons/email.svg" type="image/svg+xml" class="svg-icon">
+            <embed src="/assets/icons/email.svg" type="image/svg+xml" class="svg-icon">
             nyko-23@hotmail.com
           </a>
 
           <a href="https://www.linkedin.com/in/nicolas-grave" target="_blacnk" class="contact-item">
-            <embed src="./assets/icons/linkedin.svg" type="image/svg+xml" class="svg-icon">
+            <embed src="/assets/icons/linkedin.svg" type="image/svg+xml" class="svg-icon">
             Linkedin
           </a>
 
           <a href="https://github.com/nhgrave" target="_blank" class="contact-item">
-            <embed src="./assets/icons/github.svg" type="image/svg+xml" class="svg-icon">
+            <embed src="/assets/icons/github.svg" type="image/svg+xml" class="svg-icon">
             GitHub
           </a>
         </div>
       </div>
     </div>
+  </div>
+</template>
 
-    <script src="./scripts.js"></script>
-  </body>
-</html>
+<style lang="scss">
+@import './styles.css';
+</style>
