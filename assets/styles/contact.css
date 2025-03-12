@@ -29,6 +29,10 @@
   color: var(--text-active);
 }
 
+.contact-section .contact-item:hover {
+  background: var(--bg-tertiary);
+}
+
 .contact-section .svg-icon {
   width: 1.5rem;
   height: 1.5rem;
