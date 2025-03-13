@@ -2,10 +2,12 @@
   <div class="navbar">
     <div class="container">
       <div class="nav-content">
-        <embed src="/assets/icons/codeblock.svg" type="image/svg+xml" class="navbar-brand">
+        <a href="#home-section" v-scroll-to="'#home-section'" class="navbar-brand">
+          <embed src="/assets/icons/codeblock.svg" type="image/svg+xml">
+        </a>
 
         <div class="navbar-menu">
-          <a v-for="item in items" :key="item.href" :href="item.href" :data-scroll-to="item.href" class="navbar-link">
+          <a v-for="item in items" :key="item.href" :href="item.href" v-scroll-to="item.href" class="navbar-link">
             {{ item.text }}
           </a>
         </div>
