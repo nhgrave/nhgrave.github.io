@@ -11,6 +11,10 @@
 
   --fs-title: 2rem;
   --fw-title: 700;
+
+  --bg-hero: #34353A;
+
+  --shadow: 0 8px 30px #303030;
 }
 
 html {

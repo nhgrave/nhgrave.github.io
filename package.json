@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "imports": {
+    "#components/*": "./src/components/*",
+    "#views/*": "./src/views/*"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
