@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="container">
       <div class="nav-content">
-        <a href="#home-section" v-scroll-to="'#home-section'" class="navbar-brand">
+        <a href="#home-section" v-scroll-to="'#home-section'" aria-label="Home" class="navbar-brand">
           <embed src="/assets/icons/codeblock.svg" type="image/svg+xml">
         </a>
 
@@ -11,17 +11,45 @@
             {{ item.text }}
           </a>
         </div>
+
+        <div>
+          <Dropdown
+            :modelValue="language"
+            :items="languages"
+            @update:modelValue="setLanguage"
+          >
+            <template v-slot:label>
+              <div class="flex items-center gap-1">
+                <embed :src="language.flag" type="image/svg+xml" class="flag">
+                <span>{{ language.code }}</span>
+              </div>
+            </template>
+            <template v-slot="{ item }">
+              <div class="flex items-center gap-1">
+                <embed :src="item.flag" type="image/svg+xml" class="flag">
+                <span>{{ item.code }}</span>
+              </div>
+            </template>
+          </Dropdown>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import Dropdown from '#components/Shared/Dropdown.vue';
+import useI18n from '#composables/i18n.js';
+import useLanguage from '#composables/language';
+
+const { languages, language, setLanguage } = useLanguage();
+const { t } = useI18n();
+
 const items = [
-  { text: 'About', href: '#about' },
-  { text: 'Experience', href: '#experience' },
-  { text: 'Contact', href: '#contact' }
-]
+  { text: t('header.about'), href: '#about' },
+  { text: t('header.experience'), href: '#experience' },
+  { text: t('header.contact'), href: '#contact' }
+];
 </script>
 
 <style lang="scss" scoped>
@@ -62,5 +90,11 @@ const items = [
   &.active {
     opacity: 1;
   }
+}
+
+.flag {
+  width: 20px;
+  height: 10px;
+  border-radius: 2px;
 }
 </style>

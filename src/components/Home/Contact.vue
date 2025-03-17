@@ -1,7 +1,7 @@
 <template>
   <div class="contact-section" id="contact">
     <div class="container">
-      <h2 class="title">Let's work togetther!</h2>
+      <h2 class="title">{{ t('contact.title') }}</h2>
 
       <div class="contact-content">
         <a v-for="item in items" :key="item.href" :href="item.href" class="contact-item">
@@ -14,6 +14,10 @@
 </template>
 
 <script setup>
+import useI18n from '#composables/i18n.js';
+
+const { t } = useI18n();
+
 const items = [
   {
     href: 'mailto:nyko-23@hotmail.com',

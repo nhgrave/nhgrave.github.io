@@ -1,13 +1,16 @@
 <template>
   <div class="about-section" id="about">
     <div class="container">
-      <h2 class="title">About</h2>
-      I am a developer passionate about solving problems and delivering solutions that address user needs. I enjoy working on internet-focused solutions, always seeking tools that can improve both our development process and the product.
+      <h2 class="title">{{ t('about.title') }}</h2>
+      {{ t('about.description') }}
     </div>
   </div>
 </template>
 
 <script setup>
+import useI18n from '#composables/i18n.js';
+
+const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>

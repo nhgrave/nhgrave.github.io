@@ -2,10 +2,10 @@
   <div class="hero-section" id="hero">
     <div class="presentation">
       <div class="container">
-        I'm <h1 class="title">Nicolas Grave</h1>
+        {{ t('home.presentation') }} <h1 class="title">Nicolas Grave</h1>
         <br>
         <br>
-        Full Stack Web Developer
+        {{ t('home.profession') }}
       </div>
     </div>
 
@@ -14,6 +14,9 @@
 </template>
 
 <script setup>
+import useI18n from '#composables/i18n.js';
+
+const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
   <div class="experience-section" id="experience">
     <div class="container">
-      <h2 class="title">Experience</h2>
+      <h2 class="title">{{ t('experience.title') }}</h2>
 
       <div class="experience-content">
         <div v-for="(item, index) in items" :key="index" class="experience-item">
@@ -16,24 +16,28 @@
 </template>
 
 <script setup>
+import useI18n from '#composables/i18n.js';
+
+const { t } = useI18n();
+
 const items = [
   {
     year: 2021,
-    position: 'Frontend Web Developer',
-    company: 'Nelogica',
-    description: 'Working with VueJS and React in a frontend-focused team, I participated in the maintenance of 3 e-commerce sites, the creation of 2 additional e-commerce sites, and 3 static websites. I implemented PIX payments and WebSocket integration in the projects.',
+    position: t('experience.0.position'),
+    company: t('experience.0.company'),
+    description: t('experience.0.description'),
   },
   {
     year: 2017,
-    position: 'Full Stack Web Developer',
-    company: 'Zanshin Software',
-    description: 'Working with Ruby on Rails and JavaScript in a team of 2 developers and maintaining 7 projects, I participated in the implementation of VueJS in part of a system, integration with CENP, integration with payment gateways (Mecado Pago + Paypal), rebranding of system layouts, and contributed financial management reports for users.',
+    position: t('experience.1.position'),
+    company: t('experience.1.company'),
+    description: t('experience.1.description'),
   },
   {
     year: 2014,
-    position: 'Full Stack Web Developer',
-    company: '29Sul',
-    description: 'Working with Ruby on Rails and JavaScript in a team of 3 developers, we maintained a total of 5 software applications, which included management tools for advertising agencies, project management, financial management, and 2 internal management systems, all commercialized as SaaS. I also participated in the implementation of CNAB and OFX bank file remittance and return.',
+    position: t('experience.2.position'),
+    company: t('experience.2.company'),
+    description: t('experience.2.description'),
   },
 ]
 </script>

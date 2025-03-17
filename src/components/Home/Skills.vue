@@ -1,7 +1,7 @@
 <template>
   <div class="skills-section" id="skills">
     <div class="container">
-      <h2 class="title">My Skills</h2>
+      <h2 class="title">{{ t('skills.title') }}</h2>
 
       <div class="skills-list">
         <div v-for="(item, index) in items" :key="index" class="skill-item">
@@ -14,6 +14,10 @@
 </template>
 
 <script setup>
+import useI18n from '#composables/i18n.js';
+
+const { t } = useI18n();
+
 const items = [
   {
     logo: '/assets/icons/ruby.svg',
