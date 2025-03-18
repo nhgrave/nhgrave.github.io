@@ -1,6 +1,8 @@
 function scrollTo(e) {
   e.preventDefault();
-  const reference = document.querySelector(e.target.dataset.scrollTo);
+  let target = e.target;
+  if (!e.target.dataset.scrollTo) target = e.target.closest('[data-scroll-to]');
+  const reference = document.querySelector(target.dataset.scrollTo);
   if (reference) reference.scrollIntoView({ behavior: 'smooth' });
 }
 

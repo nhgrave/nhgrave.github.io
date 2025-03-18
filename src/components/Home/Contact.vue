@@ -5,7 +5,7 @@
 
       <div class="contact-content">
         <a v-for="item in items" :key="item.href" :href="item.href" class="contact-item">
-          <embed :src="item.icon" type="image/svg+xml" class="svg-icon">
+          <SvgHandler :icon="item.icon" class="svg-icon" />
           {{ item.text }}
         </a>
       </div>
@@ -14,6 +14,7 @@
 </template>
 
 <script setup>
+import SvgHandler from '#components/Shared/SvgHandler.vue';
 import useI18n from '#composables/i18n.js';
 
 const { t } = useI18n();
@@ -21,17 +22,17 @@ const { t } = useI18n();
 const items = [
   {
     href: 'mailto:nyko-23@hotmail.com',
-    icon: '/assets/icons/email.svg',
+    icon: 'email',
     text: 'nyko-23@hotmail.com',
   },
   {
     href: 'https://www.linkedin.com/in/nicolas-grave',
-    icon: '/assets/icons/linkedin.svg',
+    icon: 'linkedin',
     text: 'Linkedin',
   },
   {
     href: 'https://github.com/nhgrave',
-    icon: '/assets/icons/github.svg',
+    icon: 'github',
     text: 'GitHub',
   },
 ]

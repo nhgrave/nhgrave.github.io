@@ -5,7 +5,7 @@
 
       <div class="skills-list">
         <div v-for="(item, index) in items" :key="index" class="skill-item">
-          <img :src="item.logo" :alt="item.title" :title="`${item.title} logo`" class="skill-item-logo" :class="{ large: item.large }" loading="lazy">
+          <SvgHandler :icon="item.icon" class="skill-item-logo" :class="{ large: item.large }" />
           {{ item.title }}
         </div>
       </div>
@@ -15,45 +15,46 @@
 
 <script setup>
 import useI18n from '#composables/i18n.js';
+import SvgHandler from '#components/Shared/SvgHandler.vue';
 
 const { t } = useI18n();
 
 const items = [
   {
-    logo: '/assets/icons/ruby.svg',
+    icon: 'ruby',
     title: 'Ruby on Rails',
   },
   {
-    logo: '/assets/icons/vuejs.svg',
+    icon: 'vuejs',
     title: 'VueJS',
   },
   {
-    logo: '/assets/icons/react.svg',
+    icon: 'react',
     title: 'React',
   },
   {
-    logo: '/assets/icons/javascript.svg',
+    icon: 'javascript',
     title: 'JavaScript',
   },
   {
-    logo: '/assets/icons/typescript.svg',
+    icon: 'typescript',
     title: 'TypeScript',
   },
   {
-    logo: '/assets/icons/html_css.svg',
+    icon: 'html_css',
     title: 'HTML & CSS',
     large: true,
   },
   {
-    logo: '/assets/icons/git.svg',
+    icon: 'git',
     title: 'Git',
   },
   {
-    logo: '/assets/icons/postgresql.svg',
+    icon: 'postgresql',
     title: 'PostgreSQL',
   },
   {
-    logo: '/assets/icons/mysql.svg',
+    icon: 'mysql',
     title: 'MySQL',
   },
 ]

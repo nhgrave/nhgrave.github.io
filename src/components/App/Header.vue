@@ -2,8 +2,8 @@
   <div class="navbar">
     <div class="container">
       <div class="nav-content">
-        <a href="#home-section" v-scroll-to="'#home-section'" aria-label="Home" class="navbar-brand">
-          <embed src="/assets/icons/codeblock.svg" type="image/svg+xml">
+        <a href="#home-section" v-scroll-to="'#home-section'" class="navbar-brand">
+          <SvgHandler icon="codeblock" />
         </a>
 
         <div class="navbar-menu">
@@ -13,24 +13,7 @@
         </div>
 
         <div>
-          <Dropdown
-            :modelValue="language"
-            :items="languages"
-            @update:modelValue="setLanguage"
-          >
-            <template v-slot:label>
-              <div class="flex items-center gap-1">
-                <embed :src="language.flag" type="image/svg+xml" class="flag">
-                <span>{{ language.code }}</span>
-              </div>
-            </template>
-            <template v-slot="{ item }">
-              <div class="flex items-center gap-1">
-                <embed :src="item.flag" type="image/svg+xml" class="flag">
-                <span>{{ item.code }}</span>
-              </div>
-            </template>
-          </Dropdown>
+          <DropdownLanguage />
         </div>
       </div>
     </div>
@@ -38,11 +21,10 @@
 </template>
 
 <script setup>
-import Dropdown from '#components/Shared/Dropdown.vue';
+import SvgHandler from '#components/Shared/SvgHandler.vue';
+import DropdownLanguage from '#components/App/DropdownLanguage.vue';
 import useI18n from '#composables/i18n.js';
-import useLanguage from '#composables/language';
 
-const { languages, language, setLanguage } = useLanguage();
 const { t } = useI18n();
 
 const items = [

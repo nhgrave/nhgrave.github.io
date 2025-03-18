@@ -3,7 +3,7 @@
     <button class="dropdown-button" @click="isOpen = !isOpen">
       <slot v-if="$slots.label" name="label"></slot>
       <span v-else>{{ label || 'Select' }}</span>
-      <embed src="/assets/icons/arrow.svg" type="image/svg+xml" class="arrow-icon">
+      <SvgHandler icon="arrow" class="arrow-icon" />
     </button>
     <div v-if="isOpen" class="dropdown-content">
       <div
@@ -13,12 +13,11 @@
         class="dropdown-item"
       >
         <slot :item="item"></slot>
-        <embed
+        <SvgHandler
           v-if="JSON.stringify(item) === JSON.stringify(modelValue)"
-          src="/assets/icons/check.svg"
-          type="image/svg+xml"
+          icon="check"
           class="check-icon"
-        >
+        />
       </div>
     </div>
   </div>
@@ -26,6 +25,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import SvgHandler from '#components/Shared/SvgHandler.vue';
 
 defineProps({
   modelValue: {
