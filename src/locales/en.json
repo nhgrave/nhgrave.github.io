@@ -6,7 +6,7 @@
   },
   "home": {
     "presentation": "I'm",
-    "profession": "Full Stack Web Developer"
+    "profession": [ "Software Web Developer", "Full Stack Web Developer", "Frontend Web Developer" ]
   },
   "about": {
     "title": "About Me",

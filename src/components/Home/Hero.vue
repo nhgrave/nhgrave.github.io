@@ -5,7 +5,11 @@
         {{ t('home.presentation') }} <h1 class="title">Nicolas Grave</h1>
         <br>
         <br>
-        {{ t('home.profession') }}
+        <TypeAnimation
+          :key="locale"
+          :sequence="t('home.profession').value"
+          infinity
+        />
       </div>
     </div>
 
@@ -14,9 +18,10 @@
 </template>
 
 <script setup>
+import TypeAnimation from '#components/Shared/TypeAnimation.vue';
 import useI18n from '#composables/i18n.js';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 </script>
 
 <style lang="scss" scoped>
@@ -32,10 +37,17 @@ const { t } = useI18n();
   box-shadow: var(--shadow);
 }
 
+@keyframes colorChange {
+    0% { color: var(--text-active); }
+    50% { color: var(--text-active-bright); }
+    100% { color: var(--text-active); }
+}
+
 .title {
   display: inline;
   color: var(--text-active);
   font-size: var(--fs-title);
+  animation: colorChange 5s infinite;
 }
 
 .profile-image {

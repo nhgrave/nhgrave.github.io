@@ -6,7 +6,7 @@
   },
   "home": {
     "presentation": "Eu sou",
-    "profession": "Desenvolvedor Web Full Stack"
+    "profession": [ "Desenvolvedor Web de Software", "Desenvolvedor Web Full Stack", "Desenvolvedor Web Frontend" ]
   },
   "about": {
     "title": "Sobre mim",
