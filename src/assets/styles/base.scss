@@ -33,6 +33,10 @@ html {
 
 body {
   line-height: 1.2;
+
+  &:has(.open-menu) {
+    overflow: hidden;
+  }
 }
 
 .container {

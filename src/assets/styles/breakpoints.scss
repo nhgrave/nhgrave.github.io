@@ -3,25 +3,25 @@ $screen-md-min: 768px;
 $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
-@mixin sm {
+@mixin screen-up-from-sm {
   @media (min-width: #{$screen-sm-min}) {
     @content;
   }
 }
 
-@mixin md {
+@mixin screen-up-from-md {
   @media (min-width: #{$screen-md-min}) {
     @content;
   }
 }
 
-@mixin lg {
+@mixin screen-up-from-lg {
   @media (min-width: #{$screen-lg-min}) {
     @content;
   }
 }
 
-@mixin xl {
+@mixin screen-up-from-xl {
   @media (min-width: #{$screen-xl-min}) {
     @content;
   }

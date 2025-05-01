@@ -8,4 +8,11 @@ export default defineConfig({
     vue(),
     svgLoader(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "/src/assets/styles/breakpoints.scss" as *;`
+      }
+    }
+  },
 })
