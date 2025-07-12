@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="container">
       <div class="nav-content" :class="{ 'open-menu': openMenu }">
-        <a href="#home-section" v-scroll-to="'#home-section'" class="navbar-brand">
+        <a href="#home-section" v-scroll-to="'#home-section'" class="navbar-brand" aria-label="Navigate to home section">
           <SvgHandler icon="codeblock" />
         </a>
 
@@ -18,7 +18,7 @@
           </div>
 
           <div class="social-links">
-            <a v-for="item in socialItems" :key="item.href" :href="item.href" target="blank" @click="closeMenu" class="social-link">
+            <a v-for="item in socialItems" :key="item.href" :href="item.href" target="blank" @click="closeMenu" class="social-link" :aria-label="`Navigate to ${item.icon}`">
               <SvgHandler :icon="item.icon" :style="{width: '20px', height: '20px'}"/>
             </a>
           </div>
