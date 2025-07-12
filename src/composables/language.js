@@ -2,9 +2,9 @@ import { readonly, ref } from "vue";
 import useI18n from "./i18n";
 
 const languages = [
-  { code: 'EN', name: 'English', flag: 'united-kindom' },
+  { code: 'EN', name: 'English', flag: 'united-states' },
   { code: 'ES', name: 'Español', flag: 'spain' },
-  { code: 'PT', name: 'Portugues', flag: 'portugal' },
+  { code: 'PT', name: 'Portugues', flag: 'brazil' },
 ];
 
 const language = ref(languages[0]);
