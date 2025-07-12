@@ -2,6 +2,7 @@
   <Dropdown
     :modelValue="language"
     :items="languages"
+    class="dropdown-language"
     @update:modelValue="setLanguage"
   >
     <template v-slot:label>
@@ -27,7 +28,19 @@ import useLanguage from '#composables/language';
 const { languages, language, setLanguage } = useLanguage();
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.dropdown-language {
+  :deep(.dropdown-button) {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  :deep(.dropdown-content) {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+}
+
 .flag-icon {
   height: 12px;
 }
