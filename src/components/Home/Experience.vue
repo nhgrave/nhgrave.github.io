@@ -7,8 +7,13 @@
         <div v-for="(item, index) in items" :key="index" class="experience-item">
           <span class="year-badge">{{ item.year }}</span>
           <h3 class="experience-position">{{ item.position }}</h3>
-          <h4 class="experience-company">{{ item.company }}</h4>
+          <a :href="item.companyWebSite" target="_blank" class="experience-company">{{ item.company }}</a>
           <p class="experience-description">{{ item.description }}</p>
+          <ul class="experience-skills">
+            <li v-for="skill in item.skills" :key="skill">
+              <span class="experience-skill-badge">{{ skill }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -25,19 +30,25 @@ const items = [
     year: 2021,
     position: t('experience.0.position'),
     company: t('experience.0.company'),
+    companyWebSite: 'https://www.nelogica.com.br',
     description: t('experience.0.description'),
+    skills: ['Vue.js', 'React', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'SCSS', 'HTML', 'CSS', 'Git', 'CI/CD']
   },
   {
     year: 2017,
     position: t('experience.1.position'),
     company: t('experience.1.company'),
+    companyWebSite: 'https://www.zanshinsoftware.com',
     description: t('experience.1.description'),
+    skills: ['Ruby on Rails', 'Vue.js', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'MySQL', 'PostgreSQL', 'Git']
   },
   {
     year: 2014,
     position: t('experience.2.position'),
     company: t('experience.2.company'),
+    companyWebSite: 'https://www.linkedin.com/company/29sul-tecnologia-da-informacao/about',
     description: t('experience.2.description'),
+    skills: ['Ruby on Rails', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'MySQL', 'Git']
   },
 ]
 </script>
@@ -106,5 +117,33 @@ const items = [
 .experience-position {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.experience-company {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+  width: fit-content;
+
+  &:hover {
+    color: var(--text-active);
+  }
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  & > li {
+    display: flex;
+  }
+}
+
+.experience-skill-badge {
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
 }
 </style>
