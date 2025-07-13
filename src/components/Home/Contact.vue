@@ -21,9 +21,9 @@ const { t } = useI18n();
 
 const items = [
   {
-    href: 'mailto:nyko-23@hotmail.com',
+    href: 'mailto:nhgrave@outlook.com',
     icon: 'email',
-    text: 'nyko-23@hotmail.com',
+    text: 'nhgrave@outlook.com',
   },
   {
     href: 'https://www.linkedin.com/in/nicolas-grave',
