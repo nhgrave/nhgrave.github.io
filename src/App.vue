@@ -19,7 +19,7 @@ import Home from '#views/Home.vue';
 const { setLanguageByCode } = useLanguage();
 
 onMounted(() => {
-  setLanguageByCode('en');
+  setLanguageByCode(navigator.language || navigator.userLanguage || 'EN');
 })
 </script>
 

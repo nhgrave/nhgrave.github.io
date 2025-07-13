@@ -16,13 +16,18 @@ export default function useLanguage() {
 
       const { setLocale } = useI18n();
       setLocale(language.value.code.toLowerCase());
+      document.documentElement.setAttribute('lang', language.value.code.toLowerCase());
     } else {
       throw new Error(`Language code "${lang.code || lang}" is not allowed`);
     }
   };
 
   function setLanguageByCode(code) {
-    const language = languages.find(language => language.code === code.toUpperCase());
+    let lang = code.toUpperCase();
+    if (lang.split('-').length > 1) {
+      lang = lang.split('-')[0];
+    }
+    const language = languages.find(language => language.code === lang);
     setLanguage(language);
   }
 
