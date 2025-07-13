@@ -7,9 +7,14 @@
         <br>
         <TypeAnimation
           :key="locale"
-          :sequence="t('home.profession').value"
+          :sequence="professions"
           infinity
         />
+        <br>
+        <br>
+        <a href="https://drive.google.com/file/d/10CrzbpE2-TRKIUHS0IQ0XN4KrjFArUHN/view?usp=sharing" target="_blank" class="btn btn-primary">
+          CV
+        </a>
       </div>
     </div>
 
@@ -22,6 +27,8 @@ import TypeAnimation from '#components/Shared/TypeAnimation.vue';
 import useI18n from '#composables/i18n.js';
 
 const { t, locale } = useI18n();
+
+const professions = t('home.profession');
 </script>
 
 <style lang="scss" scoped>
@@ -73,6 +80,26 @@ const { t, locale } = useI18n();
 @media (min-width: 992px) {
   .profile-image {
     width: 300px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--bg-primary-invert);
+  color: var(--text-primary-invert);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--bg-active);
+  &:hover {
+    background-color: var(--bg-active-bright);
   }
 }
 </style>
