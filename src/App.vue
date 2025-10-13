@@ -21,10 +21,10 @@ import Footer from '#components/App/Footer.vue';
 import useLanguage from '#composables/language.js';
 import Home from '#views/Home.vue';
 
-const { setLanguageByCode } = useLanguage();
+const { setInitialLanguage } = useLanguage();
 
 onMounted(() => {
-  setLanguageByCode(navigator.language || navigator.userLanguage || 'EN');
+  setInitialLanguage();
 })
 </script>
 

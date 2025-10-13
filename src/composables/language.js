@@ -10,6 +10,11 @@ const languages = [
 const language = ref(languages[0]);
 
 export default function useLanguage() {
+  function setInitialLanguage() {
+    const language = localStorage.getItem('language') || navigator.language || navigator.userLanguage || 'EN'
+    setLanguageByCode(language);
+  }
+
   function setLanguage(lang) {
     if (languages.includes(lang)) {
       language.value = lang;
@@ -17,6 +22,7 @@ export default function useLanguage() {
       const { setLocale } = useI18n();
       setLocale(language.value.code.toLowerCase());
       document.documentElement.setAttribute('lang', language.value.code.toLowerCase());
+      localStorage.setItem('language', language.value.code);
     } else {
       throw new Error(`Language code "${lang.code || lang}" is not allowed`);
     }
@@ -36,5 +42,6 @@ export default function useLanguage() {
     language: readonly(language),
     setLanguage,
     setLanguageByCode,
+    setInitialLanguage,
   };
 }
