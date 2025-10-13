@@ -4,53 +4,79 @@
       <h2 class="title">{{ t('experience.title') }}</h2>
 
       <div class="experience-content">
+        <!-- List -->
         <div v-for="(item, index) in items" :key="index" class="experience-item">
           <span class="year-badge">{{ item.year }}</span>
           <h3 class="experience-position">{{ item.position }}</h3>
-          <a :href="item.companyWebSite" target="_blank" class="experience-company">{{ item.company }}</a>
+          <CustomLink :to="item.companyWebSite" external class="experience-company">{{ item.company }}</CustomLink>
           <p class="experience-description">{{ item.description }}</p>
           <ul class="experience-skills">
             <li v-for="skill in item.skills" :key="skill">
               <span class="experience-skill-badge">{{ skill }}</span>
             </li>
           </ul>
+          <CustomLink v-if="item.fullDescription" prevent @click="showModal(item)" class="experience-show-more">
+            {{ t('experience.showMore') }}
+          </CustomLink>
         </div>
+
+        <!-- Modal -->
+         <Modal ref="modalRef">
+          <template #header>
+            <h3 class="modal-title">{{ selectedItem.company }}</h3>
+          </template>
+          <p v-html="selectedItem.fullDescription" class="experience-full-description" />
+         </Modal>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import CustomLink from '#components/Shared/CustomLink.vue';
 import useI18n from '#composables/i18n.js';
+import Modal from '#components/Shared/Modal.vue';
 
 const { t } = useI18n();
 
 const items = [
   {
     year: 2021,
-    position: t('experience.0.position'),
-    company: t('experience.0.company'),
+    position: t('experience.nelogica.position'),
+    company: t('experience.nelogica.company'),
     companyWebSite: 'https://www.nelogica.com.br',
-    description: t('experience.0.description'),
+    description: t('experience.nelogica.description'),
+    fullDescription: t('experience.nelogica.fullDescription'),
     skills: ['Vue.js', 'React', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'SCSS', 'HTML', 'CSS', 'Git', 'CI/CD']
   },
   {
     year: 2017,
-    position: t('experience.1.position'),
-    company: t('experience.1.company'),
+    position: t('experience.zanshin.position'),
+    company: t('experience.zanshin.company'),
     companyWebSite: 'https://www.zanshinsoftware.com',
-    description: t('experience.1.description'),
+    description: t('experience.zanshin.description'),
+    fullDescription: t('experience.zanshin.fullDescription'),
     skills: ['Ruby on Rails', 'Vue.js', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'MySQL', 'PostgreSQL', 'Git']
   },
   {
     year: 2014,
-    position: t('experience.2.position'),
-    company: t('experience.2.company'),
+    position: t('experience.29sul.position'),
+    company: t('experience.29sul.company'),
     companyWebSite: 'https://www.linkedin.com/company/29sul-tecnologia-da-informacao/about',
-    description: t('experience.2.description'),
+    description: t('experience.29sul.description'),
     skills: ['Ruby on Rails', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'MySQL', 'Git']
   },
 ]
+
+const modalRef = ref(null);
+const selectedItem = ref(null);
+
+function showModal(item) {
+  selectedItem.value = item;
+
+  modalRef.value.openModal();
+}
 </script>
 
 <style lang="scss" scoped>
@@ -123,7 +149,6 @@ const items = [
   color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s;
-  width: fit-content;
 
   &:hover {
     color: var(--text-active);
@@ -145,5 +170,27 @@ const items = [
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.875rem;
+}
+
+.experience-show-more {
+  color: var(--text-active);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.8rem;
+
+  &:hover {
+    color: var(--text-active-bright);
+  }
+}
+
+.experience-full-description {
+  &:deep(a) {
+    color: var(--text-active);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--text-active-bright);
+    }
+  }
 }
 </style>

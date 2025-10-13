@@ -21,6 +21,8 @@
   --bg-hero: #34353A;
 
   --shadow: 0 8px 30px #303030;
+
+  --modal-index: 1000;
 }
 
 html {
@@ -35,7 +37,8 @@ html {
 body {
   line-height: 1.2;
 
-  &:has(.open-menu) {
+  &:has(.open-menu),
+  &:has(.modal-overlay) {
     overflow: hidden;
   }
 }

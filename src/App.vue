@@ -6,6 +6,8 @@
     <main>
       <!-- Home -->
       <Home />
+
+      <div id="modals"></div>
     </main>
   </div>
 </template>

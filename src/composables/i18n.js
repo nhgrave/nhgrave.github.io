@@ -14,7 +14,7 @@ i18n.onChange(() => {
 });
 
 async function loadTranslations(locale) {
-  const module = await import(`../locales/${locale}.json`);
+  const module = await import(`../locales/${locale}.js`);
 
   i18n.store({
     [locale]: module.default,
