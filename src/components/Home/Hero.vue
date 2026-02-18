@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <img src="/assets/images/profile.jpg" alt="Profile image" title="Profile image" class="profile-image">
+    <img src="/assets/images/profile.jpg" alt="Profile image" title="Profile image" class="profile-image" fetchpriority="high" width="428" height="428">
   </div>
 </template>
 
@@ -59,6 +59,7 @@ const professions = t('home.profession');
 
 .profile-image {
   width: 250px;
+  height: 250px;
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: var(--shadow);
@@ -71,6 +72,7 @@ const professions = t('home.profession');
 
   .profile-image {
     width: 280px;
+    height: 280px;
     position: absolute;
     right: 50%;
     transform: translate(120%, 0);
@@ -80,6 +82,7 @@ const professions = t('home.profession');
 @media (min-width: 992px) {
   .profile-image {
     width: 300px;
+    height: 300px;
   }
 }
 

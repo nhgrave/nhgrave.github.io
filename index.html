@@ -26,7 +26,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1VKSJ3FWQ"></script>
@@ -37,6 +37,9 @@
 
       gtag('config', 'G-G1VKSJ3FWQ');
     </script>
+
+    <!-- Preload -->
+    <link rel="preload" as="image" href="/assets/images/profile.jpg" fetchpriority="high">
   </head>
 
   <body>
