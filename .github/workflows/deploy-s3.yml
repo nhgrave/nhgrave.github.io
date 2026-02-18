@@ -6,6 +6,10 @@ on:
       - master
 
   workflow_dispatch:
+    inputs:
+      release:
+        description: "Release to rollback"
+        required: true
 
 jobs:
   build:
@@ -51,8 +55,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy to AWS S3
-        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
+      - name: Create release name
+        id: release
+        run: echo "RELEASE=$(date +%Y%m%d%H%M%S)" >> $GITHUB_OUTPUT
+
+      - name: Upload to versioned folder
+        run: |
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }}
+
+      - name: Update current folder
+        run: |
+          aws s3 rm s3://${{ secrets.AWS_S3_BUCKET }}/current --recursive
+          aws s3 cp \
+            s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }} \
+            s3://${{ secrets.AWS_S3_BUCKET }}/current \
+            --recursive
 
       - name: Invalidate CloudFront
         run: |
