@@ -66,10 +66,31 @@ jobs:
       - name: Update current folder
         run: |
           aws s3 rm s3://${{ secrets.AWS_S3_BUCKET }}/current --recursive
+
           aws s3 cp \
-            s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }} \
-            s3://${{ secrets.AWS_S3_BUCKET }}/current \
-            --recursive
+            s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }}/ \
+            s3://${{ secrets.AWS_S3_BUCKET }}/current/ \
+            --recursive \
+            --exclude "index.html" \
+            --exclude "robots.txt" \
+            --exclude "sitemap.xml" \
+            --cache-control "public, max-age=31536000, immutable" \
+            --metadata-directive REPLACE
+
+          aws s3 cp \
+            s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }}/index.html \
+            s3://${{ secrets.AWS_S3_BUCKET }}/current/index.html \
+            --cache-control "public, max-age=0, must-revalidate"
+
+          aws s3 cp \
+            s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }}/robots.txt \
+            s3://${{ secrets.AWS_S3_BUCKET }}/current/robots.txt \
+            --cache-control "public, max-age=86400"
+
+          aws s3 cp \
+            s3://${{ secrets.AWS_S3_BUCKET }}/releases/${{ steps.release.outputs.RELEASE }}/sitemap.xml \
+            s3://${{ secrets.AWS_S3_BUCKET }}/current/sitemap.xml \
+            --cache-control "public, max-age=86400"
 
       - name: Invalidate CloudFront
         run: |
