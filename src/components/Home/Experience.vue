@@ -42,6 +42,15 @@ const { t } = useI18n();
 
 const items = [
   {
+    year: 2026,
+    position: t('experience.clubedovalor.position'),
+    company: t('experience.clubedovalor.company'),
+    companyWebSite: 'https://www.clubedovalor.com.br',
+    description: t('experience.clubedovalor.description'),
+    fullDescription: t('experience.clubedovalor.fullDescription'),
+    skills: ['PHP', 'MySQL', 'Git', 'CI/CD']
+  },
+  {
     year: 2021,
     position: t('experience.nelogica.position'),
     company: t('experience.nelogica.company'),

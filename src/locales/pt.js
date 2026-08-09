@@ -15,6 +15,16 @@ export default {
   experience: {
     title: "Minhas experiencias",
     showMore: "Mostrar mais",
+    clubedovalor: {
+      position: "Desenvolvedor Web Full Stack",
+      company: "Clube do Valor",
+      description: "Desenvolvimento e manutenção de aplicações em PHP para integração com instituições financeiras, automatizando a coleta diária de dados de carteiras sob gestão e garantindo alta disponibilidade, performance e integridade das informações.",
+      fullDescription: `
+        <p>Iniciei minha atuação no Clube do Valor no início de 2026, integrando o time de Alocação e Mercado com o desafio de automatizar e otimizar a extração de dados de carteiras de clientes junto a instituições financeiras.</p>
+        <br>
+        <p>Uma das principais melhorias que implementei foi a reorganização do fluxo das rotinas de integração. Reestruturei a execução para utilizar processamento paralelo via filas e otimizei a camada de persistência no banco de dados, substituindo inserções individuais por operações em lote (bulk insert). Essa otimização reduziu em aproximadamente 55% o tempo total de processamento das rotinas diárias.</p>
+      `,
+    },
     nelogica: {
       position: "Desenvolvedor Web Frontend",
       company: "Nelogica",

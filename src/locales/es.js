@@ -15,6 +15,16 @@ export default {
   experience: {
     title: "Mi Experiencia",
     showMore: "Mostrar Más",
+    clubedovalor: {
+      position: "Desarrollador Web Full Stack",
+      company: "Clube do Valor",
+      description: "Desarrollo y mantenimiento de aplicaciones en PHP para integración con instituciones financieras, automatizando la recolección diaria de datos de carteras bajo gestión y garantizando alta disponibilidad, rendimiento e integridad de la información.",
+      fullDescription: `
+        <p>Me uní a Clube do Valor a principios de 2026 en el equipo de Asignación y Mercado, con foco en la extracción y consolidación de datos de las carteras de clientes junto a instituciones financieras.</p>
+        <br>
+        <p>Una de las principales mejoras que implementé fue la reorganización del flujo de las rutinas de integración. Reestructuré la ejecución para utilizar procesamiento paralelo mediante colas y optimicé la capa de persistencia en la base de datos, sustituyendo inserciones individuales por inserciones en lote (bulk insert). Esta optimización redujo el tiempo total de procesamiento de las rutinas diarias en aproximadamente un 55%.</p>
+      `,
+    },
     nelogica: {
       position: "Desarrollador Web Frontend",
       company: "Nelogica",

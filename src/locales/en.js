@@ -15,6 +15,16 @@ export default {
   experience: {
     title: "My Experience",
     showMore: "Show More",
+    clubedovalor: {
+      position: "Desarrollador Web Full Stack",
+      company: "Clube do Valor",
+      description: "PHP application development and maintenance for integration with financial institutions, automating daily portfolio data collection under management while ensuring high availability, performance, and data integrity.",
+      fullDescription: `
+        <p>I joined Clube do Valor in early 2026 as part of the Allocation and Market team, focusing on extracting and consolidating client portfolio data from financial institutions.</p>
+        <br>
+        <p>One of the main improvements I implemented was reorganizing the integration routine flow. I restructured the execution to use queue-based parallel processing and optimized the database persistence layer by switching from individual insertions to bulk inserts. This optimization reduced the total processing time of daily routines by approximately 55%.</p>
+      `,
+    },
     nelogica: {
       position: "Frontend Web Developer",
       company: "Nelogica",
